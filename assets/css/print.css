@@ -1,0 +1,47 @@
+#table-of-contents,
+.MainHeader,
+iframe,
+#pdf-version,
+.embed-container {
+    display: none !important;
+}
+
+div[class^='pdf-embed-wrap'], div[class*=' pdf-embed-wrap']{
+    display: none !important;
+}
+
+#handwritten-notes, 
+#lecture-notes-pdf {
+    display: none !important;
+}
+
+h1 {
+    font-size: 20px !important;
+}
+
+h2 {
+    font-size: 16px !important;
+}
+
+h3 {
+    font-size: 14px !important;
+}
+
+p,
+li,
+details {
+    font-size: 12px !important;
+}
+
+#breadcrumbs {
+    font-size: 12px !important;
+}
+
+table,
+thead,
+tbody,
+tr,
+th,
+td {
+    font-size: 12px !important;
+}

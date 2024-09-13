@@ -1,0 +1,116 @@
+.MainHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eaecef;
+}
+
+@media (max-width: 768px) {
+    .MainHeader {
+        flex-direction: column;
+        align-items: center;
+        align-content: stretch;
+        flex-wrap: nowrap;
+    }
+
+    .markdown-body {
+        margin-top: 0px !important;
+    }
+
+    #searchForm {
+        margin-bottom: 15px;
+    }
+}
+
+.anchorjs-link {
+    float: left;
+    padding-right: 10px;
+    padding-left: 0em !important;
+}
+
+.GitHubOnly {
+    display: none;
+    visibility: hidden;
+}
+
+.rouge-table {
+    display: inherit !important;
+}
+
+.rouge-table .markdown-body table tr {
+    border: none !important;
+}
+
+.rouge-code {
+    padding: 0px !important;
+    border: none !important;
+}
+
+.rouge-table tr {
+    border: none !important;
+}
+
+td.rouge-gutter.gl {
+    padding: 0px !important;
+    border: none;
+    border-right: 1px solid #c6cbd1;
+}
+
+.embed-container {
+    margin-bottom: 25px;
+}
+
+/* Colors from https://flatuicolors.com/ */
+
+.blue-pen {
+    color: #0984e3;
+}
+
+.red-pen {
+    color: #e74c3c;
+}
+
+.green-pen {
+    color: #4cd137;
+}
+
+.dark-green-pen {
+    color: #27ae60;
+}
+
+.section-nav {
+    margin-bottom: 0px !important;
+}
+
+details ~ p,
+details ~ ul {
+    margin-bottom: 2px !important;
+}
+
+p:not(:has(details)),
+ul:not(:has(details)) {
+    margin-bottom: 16px !important;
+}
+
+p:not(:has(details)) + details,
+ul:not(:has(details)) + details {
+    margin-bottom: 16px !important;
+}
+
+p:has(+ details),
+ul:has(+ details) {
+    margin-bottom: 2px !important;
+}
+
+details {
+    margin-bottom: 10px;
+}
+
+.list-double-none > ul > li > ul > li {
+    list-style-type: none;
+}
+
+code {
+    color: black;
+}

@@ -1,0 +1,38 @@
+#table-of-contents {
+    width: 200px;
+    position: absolute;
+    z-index: 1;
+    top: 45px;
+    right: 20px;
+    background: #f5f6fa;
+    overflow-x: hidden;
+    padding: 8px 0;
+    font-size: 1px;
+}
+
+#table-of-contents a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #2196f3;
+    display: block;
+}
+
+#table-of-contents a:hover {
+    color: #064579;
+}
+
+#markdown-content {
+    padding: 0px 10px;
+}
+
+.toc-h3,
+.toc-h4 {
+    margin-left: 25px;
+}
+
+@media only screen and (max-width: 1200px) {
+    #table-of-contents {
+        display: none;
+    }
+}

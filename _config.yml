@@ -1,0 +1,40 @@
+title: tweak-notes
+description: "Jekyll theme for GitHub Pages based on my tweaks on primer theme"
+markdown: kramdown
+mathjax: true
+searchbar: true
+plugins:
+  - jekyll-readme-index
+  - jekyll-pdf-embed
+  - jekyll-sitemap
+  - jekyll-toc
+  - jekyll-youtube
+  - jekyll-seo-tag
+
+baseurl: /
+permalink: /:title/
+readme_index:
+  enabled: true
+  with_frontmatter: true
+
+toc:
+  min_level: 1
+  max_level: 4
+
+defaults:
+  - scope:
+      path: "" # Empty string means all files
+    values:
+      layout: "default"
+      search: true
+      toc: true
+
+kramdown:
+  highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+exclude:
+  - Scripts/
+  - vendor/bundle/
