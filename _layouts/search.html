@@ -59,9 +59,9 @@
         <div class="MainHeader">
             <div style="display:flex; justify-content: flex-start; align-items: center;">
                 {% if site.logo %}
-                    <a href="/"><img src="{{ site.logo }}" alt="logo" height="42" width="42" style="padding-right: 10px;"></a>
+                    <a href="{{ site.baseurl }}/"><img src="{{ site.logo }}" alt="logo" height="42" width="42" style="padding-right: 10px;"></a>
                 {% endif %}
-                <h1 style="border-bottom: 0px solid rgba(0, 0, 0,0);" class="no-anchor"><a href="/">{{ site.title }}</a>
+                <h1 style="border-bottom: 0px solid rgba(0, 0, 0,0);" class="no-anchor"><a href="{{ site.baseurl }}/">{{ site.title }}</a>
                 </h1>
             </div>
         </div>
@@ -69,7 +69,7 @@
 
         <div id="breadcrumbs">
             {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
-            <a href="/">Home</a> {% for crumb in crumbs offset: 1 %} {% if forloop.last %} / {{ page.title }} {% else %}
+            <a href="{{ site.baseurl }}/">Home</a> {% for crumb in crumbs offset: 1 %} {% if forloop.last %} / {{ page.title }} {% else %}
             / <a
                 href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{
                 crumb | replace:'%20',' ' | replace:'-',' ' | remove:'.html' }}</a> {% endif %} {% endfor %}
@@ -94,16 +94,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
     <script src="{{ 'assets/js/anchors.js?v=' | append: site.data['hash'] | relative_url }}"></script>
     <script src="{{ 'assets/js/print.js?v=' | append: site.data['hash'] | relative_url }}"></script>
-    <script>
-        document.getElementById('searchForm').addEventListener('submit', function(event) {
-          event.preventDefault(); // Prevent form submission
-        
-          var query = document.getElementById('lunrsearch').value;
-          if (query.trim() !== '') {
-            window.location.href = '/search?query=' + encodeURIComponent(query);
-          }
-        });
-    </script>
 </body>
 
 </html>
