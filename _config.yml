@@ -30,6 +30,10 @@ defaults:
       layout: "default"
       search: true
       toc: true
+  - scope:
+      path: "robots.txt"
+    values:
+      search: false
 
 kramdown:
   highlighter: rouge
