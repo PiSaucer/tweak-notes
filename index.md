@@ -120,3 +120,7 @@ Long, single-line code blocks should not wrap. They should horizontally scroll i
 ```plaintext
 The final element.
 ```
+
+## YouTube Video
+
+{% youtube "https://youtu.be/jNQXAC9IVRw" %}

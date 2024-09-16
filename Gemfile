@@ -21,12 +21,13 @@ gem "github-pages", group: :jekyll_plugins
 group :jekyll_plugins do
   gem 'jekyll-titles-from-headings'
   gem "jekyll-readme-index"
-  # gem "jekyll-pdf-embed"
   gem 'jekyll-sitemap'
-  # gem "jekyll-youtube"
   gem 'jekyll-seo-tag'
+  gem 'jekyll-youtube'
   # gem "jekyll-git-hash"
+  # gem "jekyll-pdf-embed"
 end
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
