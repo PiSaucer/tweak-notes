@@ -23,11 +23,12 @@ group :jekyll_plugins do
   gem "jekyll-readme-index"
   gem "jekyll-pdf-embed"
   gem 'jekyll-sitemap'
-  gem 'jekyll-toc'
   gem "jekyll-youtube"
   gem 'jekyll-seo-tag'
   gem "jekyll-git-hash"
 end
+
+gem "jekyll-toc", path: "_plugins/jekyll-toc"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
