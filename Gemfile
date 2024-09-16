@@ -23,7 +23,7 @@ group :jekyll_plugins do
   gem "jekyll-readme-index"
   gem 'jekyll-sitemap'
   gem 'jekyll-seo-tag'
-  gem 'jekyll-youtube'
+  gem 'jekyll-youtube', path: "_plugins/jekyll-youtube"
   # gem "jekyll-git-hash"
   # gem "jekyll-pdf-embed"
 end
