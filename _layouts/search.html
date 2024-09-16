@@ -77,7 +77,7 @@
 
         <div>
             <div id="table-of-contents">
-                {% include toc.html html=content %}
+                {% include toc.html html=content h_min=site.toc.min_level h_max=site.toc.max_level %}
             </div>
             <div id="markdown-content">
                 {{ content | inject_anchors }}
