@@ -11,7 +11,9 @@ plugins:
   - jekyll-youtube
   - jekyll-seo-tag
 
-baseurl: /
+baseurl: /tweak-notes
+favicon_dir: false
+favicon_color: '#FFFFFF'
 permalink: /:title/
 readme_index:
   enabled: true

@@ -22,17 +22,19 @@
     {% seo %}
     
     <!--Favicon Information-->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="{{ site.baseurl }}favicon/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}favicon/favicon-16x16.png">
-    <link rel="manifest" href="{{ site.baseurl }}favicon/site.webmanifest">
-    <link rel="mask-icon" href="{{ site.baseurl }}favicon/safari-pinned-tab.svg" color="#ff8200">
-    <link rel="shortcut icon" href="{{ site.baseurl }}favicon/favicon.ico">
-    <meta name="msapplication-TileColor" content="#ff8200">
-    <meta name="msapplication-TileImage" content="{{ site.baseurl }}favicon/mstile-144x144.png">
-    <meta name="msapplication-config" content="{{ site.baseurl }}favicon/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
+    {% if site.favicon_dir %}
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}{{ site.favicon_dir }}/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}{{ site.favicon_dir }}favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="{{ site.baseurl }}{{ site.favicon_dir }}favicon/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}{{ site.favicon_dir }}favicon/favicon-16x16.png">
+        <link rel="manifest" href="{{ site.baseurl }}{{ site.favicon_dir }}favicon/site.webmanifest">
+        <link rel="mask-icon" href="{{ site.baseurl }}{{ site.favicon_dir }}favicon/safari-pinned-tab.svg" color="#ff8200">
+        <link rel="shortcut icon" href="{{ site.baseurl }}{{ site.favicon_dir }}favicon/favicon.ico">
+        <meta name="msapplication-TileColor" content="{{ site.favicon_color }}">
+        <meta name="msapplication-TileImage" content="{{ site.baseurl }}{{ site.favicon_dir }}favicon/mstile-144x144.png">
+        <meta name="msapplication-config" content="{{ site.baseurl }}{{ site.favicon_dir }}favicon/browserconfig.xml">
+        <meta name="theme-color" content="{{ site.favicon_color }}">
+    {% endif %}
 
     <script>
         MathJax = {
@@ -48,15 +50,7 @@
             processEscapes: true
         };
     </script>
-    <script type="text/javascript" id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-        </script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.min.js"></script>
-    <script>
-        hljs.initLineNumbersOnLoad();
-    </script>
-
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 
 <body>
@@ -65,9 +59,9 @@
         <div class="MainHeader">
             <div style="display:flex; justify-content: flex-start; align-items: center;">
                 {% if site.logo %}
-                    <a href="/"><img src="{{ site.logo }}" alt="logo" height="42" width="42" style="padding-right: 10px;"></a>
+                    <a href="{{ site.baseurl }}"><img src="{{ site.logo }}" alt="logo" height="42" width="42" style="padding-right: 10px;"></a>
                 {% endif %}
-                <h1 style="border-bottom: 0px solid rgba(0, 0, 0,0);" class="no-anchor"><a href="/">{{ site.title }}</a>
+                <h1 style="border-bottom: 0px solid rgba(0, 0, 0,0);" class="no-anchor"><a href="{{ site.baseurl }}">{{ site.title }}</a>
                 </h1>
             </div>
             {% if site.searchbar != false %}
@@ -80,7 +74,7 @@
 
         <div id="breadcrumbs">
             {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
-            <a href="/">Home</a> {% for crumb in crumbs offset: 1 %} {% if forloop.last %} / {{ page.title }} {% else %}
+            <a href="{{ site.baseurl }}">Home</a> {% for crumb in crumbs offset: 1 %} {% if forloop.last %} / {{ page.title }} {% else %}
             / <a
                 href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{
                 crumb | replace:'%20',' ' | replace:'-',' ' | remove:'.html' }}</a> {% endif %} {% endfor %}
