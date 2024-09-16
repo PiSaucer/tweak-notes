@@ -21,11 +21,11 @@ gem "github-pages", group: :jekyll_plugins
 group :jekyll_plugins do
   gem 'jekyll-titles-from-headings'
   gem "jekyll-readme-index"
-  gem "jekyll-pdf-embed"
+  # gem "jekyll-pdf-embed"
   gem 'jekyll-sitemap'
-  gem "jekyll-youtube"
+  # gem "jekyll-youtube"
   gem 'jekyll-seo-tag'
-  gem "jekyll-git-hash"
+  # gem "jekyll-git-hash"
 end
 
 gem "jekyll-toc", path: "_plugins/jekyll-toc"
